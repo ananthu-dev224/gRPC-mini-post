@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package post;
+
+
+service PostService {
+    rpc GetPost(PostRequest) returns (PostResponse);
+}
+
+
+message PostRequest {
+   string username = 1;
+}
+
+message PostObject {  
+    string username = 1;
+    string content = 2;
+    string email = 3;
+    string created_at = 4;
+}
+
+message PostResponse {
+    repeated PostObject postData = 1;
+    string status = 2;
+}

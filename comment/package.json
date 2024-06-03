@@ -1,0 +1,26 @@
+{
+  "name": "comment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:grpc": "node comment_server.js",
+    "start:express": "node index.js",
+    "start:all": "concurrently \"npm run start:grpc\" \"npm run start:express\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate:proto": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:. --grpc_out=grpc_js:. service.proto"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.10.8",
+    "@grpc/proto-loader": "^0.7.13",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

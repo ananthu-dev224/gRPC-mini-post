@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package comment;
+
+
+service CommentService {
+    rpc GetCommentByUserId(CommentRequestUserId) returns (CommentResponseUserId);
+}
+
+
+message CommentRequestUserId {
+    string userId = 1;
+}
+
+message CommentResponseObject {
+    string userId = 1;
+    string postId = 2;
+    string username = 3;
+    string content = 4;
+    string created_at = 5;
+
+}
+
+message CommentResponseUserId {
+    repeated CommentResponseObject commentData = 1;
+    string status = 2;
+}

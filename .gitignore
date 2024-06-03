@@ -1,0 +1,5 @@
+# Ignore node_modules directories in all services
+/auth/node_modules/
+/comment/node_modules/
+/post/node_modules/
+/gateway/node_modules/
